@@ -1,38 +1,338 @@
-.App {
+/* App.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fefefe;
+  color: #333;
+}
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff8e1;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff6f00;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.search-icon {
+  font-size: 1.2rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #00bcd4;
+  color: white;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.shop-btn {
+  background: #ffca28;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.hero-image img {
+  max-width: 300px;
+  border-radius: 20px;
+}
+
+.product-tabs {
+  padding: 2rem;
+  background: #fff;
+}
+
+.tabs button {
+  background: #f1f1f1;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: background 0.3s ease;
+}
+
+.tabs button:hover {
+  background: #ffe082;
+}
+
+.card {
+  width: 200px;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 130px;
+  object-fit: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card h4 {
+  margin: 0.5rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sales-banner {
+  background: #ef5350;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.sales-banner h3 {
+  margin: 0;
+}
+
+.sales-banner button {
+  margin-top: 1rem;
+  background: #ffca28;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.categories {
+  background: #fafafa;
+  padding: 2rem;
+  text-align: center;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.cat {
+  text-align: center;
+}
+
+.cat img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.testimonials {
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.testimonial {
+  width: 250px;
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 10px;
+  font-style: italic;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.footer {
+  background: #004d40;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-icons .icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #b2dfdb;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.zoom-in {
+  animation: zoomIn 0.8s ease;
+}
+
+.slide-up {
+  animation: slideUp 1s ease;
+}
+
+.slide-left {
+  animation: slideLeft 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(30px); opacity: 0 }
+  to { transform: translateX(0); opacity: 1 }
+}
+
+.newsletter {
+  background-color: #f8f3ec;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  border-radius: 12px;
+}
+
+.newsletter h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 250px;
+}
+
+.newsletter-form button {
+  padding: 0.6rem 1.2rem;
+  background-color: #4e342e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #3e2723;
+}
+
+/* Profile Section */
+.profile-section {
+  background-color: #fff8f0;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.profile-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #d35400;
+}
+
+.profile-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #f39c12;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-details p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 8px 0;
 }
