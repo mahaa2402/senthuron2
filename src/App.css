@@ -8,6 +8,7 @@ body {
   color: #333;
 }
 
+
 nav.navbar {
   display: flex;
   justify-content: space-between;
@@ -22,6 +23,108 @@ nav.navbar {
   font-weight: bold;
   color: #ff6f00;
 }
+.testimonials {
+  background: linear-gradient(to right, #fff7f0, #ffe8d6);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.testimonial-list {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #333;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: #e67e22;
+}
+.sales-banner {
+  background: url('https://images.unsplash.com/photo-1551218808-94e220e084d2') no-repeat center center/cover;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  border-radius: 1rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  animation: slideIn 1.2s ease-in-out;
+}
+
+.sales-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  z-index: 0;
+}
+
+.sales-banner h3,
+.sales-banner p,
+.sales-banner button {
+  position: relative;
+  z-index: 1;
+}
+
+.sales-banner h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sales-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.sales-banner button {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sales-banner button:hover {
+  background-color: #d35400;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 
 .nav-links {
   list-style: none;
@@ -273,6 +376,22 @@ nav.navbar {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+.card:hover, .cat:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.shop-btn {
+  background: linear-gradient(45deg, #ff9966, #ff5e62);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.shop-btn:hover {
+  background: linear-gradient(45deg, #ff5e62, #ff9966);
 }
 
 .newsletter-form input {

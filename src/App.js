@@ -22,18 +22,23 @@ const Navbar = () => (
 );
 
 const Hero = () => (
-  <section className="hero slide-up">
-    <div className="hero-content">
-      <h1>INDULGE IN BLISS</h1>
-      <p>Our Rich & Creamy Hot Chocolate – Warmth in Every Sip! Try it Now!</p>
-      <button className="shop-btn">SHOP NOW</button>
-    </div>
-    <div className="hero-image">
-      <img src="./cold.jpg" alt="Hot Chocolate" />
+  <section
+    className="hero slide-up"
+    style={{
+      backgroundImage: "url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1350&q=80')",
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      color: '#fff',
+      padding: '4rem 2rem',
+    }}
+  >
+    <div className="hero-content" style={{ maxWidth: '600px', backgroundColor: 'rgba(0,0,0,0.6)', padding: '2rem', borderRadius: '1rem' }}>
+      <h1 style={{ fontSize: '3rem' }}>INDULGE IN BLISS</h1>
+      <p style={{ fontSize: '1.2rem' }}>Our Rich & Creamy Hot Chocolate – Warmth in Every Sip! Try it Now!</p>
+      <button className="shop-btn" style={{ marginTop: '1rem', padding: '0.7rem 1.5rem', fontSize: '1rem' }}>SHOP NOW</button>
     </div>
   </section>
 );
-
 
 
 const ProductTabs = () => (
@@ -47,36 +52,40 @@ const ProductTabs = () => (
       <button>Sweet Treats</button>
     </div>
     <div className="products" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-      <ProductCard
-        img="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-        name="Green Lemon Tea"
-        desc="Natural flavor with lemon"
-        price="$3.00"
-      />
-      <ProductCard
-        img="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-        name="South Indian Filter Coffee"
-        desc="Rich taste & aroma"
-        price="$2.50"
-      />
-      <ProductCard
-        img="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
-        name="Thick Hot Chocolate"
-        desc="Indulgent delight"
-        price="$3.99"
-      />
+    <ProductCard
+  img="./hotchoc.jpg"
+  name="Green Lemon Tea"
+  desc="Natural flavor with lemon"
+  price="$3.00"
+/>
+<ProductCard
+  img="pizza.jpg"
+  name="Pizza"
+  desc="Rich taste & aroma"
+  price="$2.50"
+/>
+<ProductCard
+  img="./cold.jpg"
+  name="Thick Hot Chocolate"
+  desc="Indulgent delight"
+  price="$3.99"
+/>
+
     </div>
   </section>
 );
 
 const ProductCard = ({ img, name, desc, price }) => (
-  <div className="card zoom-in">
-    <img src={img} alt={name} />
-    <h4>{name}</h4>
-    <p>{desc}</p>
-    <span>{price}</span>
+  <div className="card zoom-in" style={{ width: '250px', border: '1px solid #ccc', borderRadius: '1rem', overflow: 'hidden', textAlign: 'center' }}>
+    <img src={img} alt={name} style={{ width: '100%', height: '180px', objectFit: 'cover' }} />
+    <div style={{ padding: '1rem' }}>
+      <h4>{name}</h4>
+      <p>{desc}</p>
+      <span style={{ color: '#e67e22', fontWeight: 'bold' }}>{price}</span>
+    </div>
   </div>
 );
+
 
 const SalesBanner = () => (
   <section className="sales-banner slide-left">
@@ -86,26 +95,31 @@ const SalesBanner = () => (
   </section>
 );
 
-const Categories = () => (
-  <section className="categories fade-in">
-    <h3>OUR CATEGORIES</h3>
-    <div className="category-list">
-      {[
-        { img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", name: "Pizza" },
-        { img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", name: "Burger" },
-        { img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", name: "Sandwiches" },
-        { img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", name: "Pasta" },
-        { img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", name: "Coffee" },
-        { img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93", name: "Beverages" }
-      ].map((cat, index) => (
-        <div key={index} className="cat zoom-in">
-          <img src={cat.img} alt={cat.name} />
-          <p>{cat.name}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+const Categories = () => {
+  const categoryData = [
+    { img: "/pizza.jpg", name: "Pizza" },
+    { img: "https://images.unsplash.com/photo-1550547660-d9450f859349", name: "Burger" },
+    { img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90", name: "Sandwiches" },
+    { img: "/cold.jpg", name: "Milkshake" },
+    { img: "/hotchoc.jpg", name: "Coffee" },
+   
+  ];
+
+  return (
+    <section className="categories fade-in">
+      <h3>OUR CATEGORIES</h3>
+      <div className="category-list" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {categoryData.map((cat, index) => (
+          <div key={index} className="cat zoom-in" style={{ textAlign: 'center' }}>
+            <img src={cat.img} alt={cat.name} style={{ width: '120px', height: '120px', borderRadius: '50%', objectFit: 'cover' }} />
+            <p>{cat.name}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 
 const Testimonials = () => (
   <section className="testimonials fade-in">
